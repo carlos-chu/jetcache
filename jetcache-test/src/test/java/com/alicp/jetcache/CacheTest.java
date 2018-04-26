@@ -80,7 +80,7 @@ public class CacheTest {
         AutoReleaseLock lock = cache.tryLock("key", 1, TimeUnit.HOURS);
         assertNull(lock);
     }
-
+    
     @Test
     public void testTryLock_LockAndGetRetry1() {
         when(cache.PUT_IF_ABSENT(any(), any(), anyLong(), any())).thenReturn(CacheResult.FAIL_WITHOUT_MSG);
